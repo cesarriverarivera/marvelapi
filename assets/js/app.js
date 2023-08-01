@@ -21,7 +21,7 @@ const llamadaApi = ()=>{
         })
 }
 
-llamadaApi() //onload 
+//llamadaApi() //onload 
 
 //dibuja en la pantalla la informacion del array de peliculas
 let nombre;
@@ -109,3 +109,8 @@ const buscador = (textoBuscado) =>{
     return filtrador; //devuelve el o los elementos filtrados
 }
 
+
+//al cargar la pagina hace la llamada a la api y renderiza el contenido
+window.addEventListener('load',() => {
+    llamadaApi()
+});
