@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(14, 15, 15); 
+    height: 100svh;
+    color: white;
+}
+.barra-navegacion{
+    position: sticky;
+    top: 0;
+    background-color: black;
+    margin-bottom: 10px;
+}
+.navbar{
+    border-bottom: 1px rgb(58, 57, 57) solid;
+}
+.navbar-brand{
+    color: white;
+}
+.btn-busqueda{
+    border-color:rgb(85, 76, 76);
+    color: rgb(66, 73, 105);
+}
+.btn-busqueda:hover{
+    background-color: rgb(6, 6, 43);
+    border-color: white;
+}
+.contenido-peliculas{
+    height: 70svh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.contenido-peliculas::-webkit-scrollbar{
+    background-color:#121212;
+    border-radius: 20px;
+    width: 14px;
+}
+.contenido-peliculas::-webkit-scrollbar-thumb{
+    background-color: #2A2A2A;
+    border-radius: 10px;
+}
+.contenido-pelicula{
+    border: 1px solid rgb(49, 48, 48);
+    height: 40svh;
+    padding-top: 3px;
+}
+.contenido-pelicula:hover{
+    .portada{
+        height: 90%;
+    }
+    .titulo-pelicula{
+        height: 10%;
+    }
+    .descripcion-pelicula{
+        display: none;
+    }
+}
+.portada{
+    height: 80%;
+    text-align: center; 
+}
+.imagen-pelicula{
+    height: 100%;
+    width: 100%;
+}
+.titulo-pelicula{
+    font-size: 12px;
+    height: 5%;
+    margin-bottom: 8px;
+}
+.titulo-pelicula p{
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.descripcion-pelicula{
+    font-size: 10px;
+    height: 15%;
+}
+.descripcion-pelicula p{
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.footr{
+    position: sticky;
+    top:100svh;
+    height: 10svh;
+}
+.pie-pagina{
+    display: flex;
+    height: 100%;
+}
+.contenido-footer{
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;  
+}
+.link-footer{
+    text-decoration: none;
+    color: white;
+}
+.link-footer:hover{
+    color:rgb(255, 1, 1);
+    font-size: 1.1rem;
+    
+}
+
