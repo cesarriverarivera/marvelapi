@@ -59,7 +59,8 @@ const renderMovies = () =>{
     const descripcionPelicula =document.createElement("div");
     const descripcionP = document.createElement("p");
 
-    divContenido.classList.add("col-2");
+    divContenido.classList.add("col-sm-4");
+    divContenido.classList.add("col-md-2");
     divContenido.classList.add("contenido-pelicula");
     divPortada.classList.add("portada");
     imagen.classList.add("imagen-pelicula");

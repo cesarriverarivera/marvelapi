@@ -20,6 +20,9 @@ body{
 .navbar-brand{
     color: white;
 }
+.navbar-brand:hover{
+    color: red;
+}
 .btn-busqueda{
     border-color:rgb(85, 76, 76);
     color: rgb(66, 73, 105);
@@ -49,10 +52,13 @@ body{
 }
 .contenido-pelicula:hover{
     .portada{
-        height: 90%;
+        height: 85%;
     }
     .titulo-pelicula{
         height: 10%;
+    }
+    .titulo-pelicula p{
+        -webkit-line-clamp: 2;
     }
     .descripcion-pelicula{
         display: none;
