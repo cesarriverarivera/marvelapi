@@ -11,7 +11,7 @@ const clearAll = ()=>{
 }
 
 const llamadaApi = ()=>{
-    fetch("http://gateway.marvel.com/v1/public/characters?ts=1000&apikey=82d4f96a5322de83d14cbf1680a696a8&hash=ed3d739c4ca06834c2f9ffb1a274b79a")
+    fetch("https://gateway.marvel.com/v1/public/characters?ts=1000&apikey=82d4f96a5322de83d14cbf1680a696a8&hash=ed3d739c4ca06834c2f9ffb1a274b79a")
         .then(response => response.json())
         .then(data => {
             marvelData = data;
