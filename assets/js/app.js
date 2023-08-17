@@ -11,7 +11,7 @@ const clearAll = ()=>{
 }
 
 const llamadaApi = ()=>{
-    fetch("https://gateway.marvel.com/v1/public/characters?ts=1000&apikey=82d4f96a5322de83d14cbf1680a696a8&hash=ed3d739c4ca06834c2f9ffb1a274b79a")
+    fetch("https://gateway.marvel.com/v1/public/characters?limit=100&ts=1000&apikey=82d4f96a5322de83d14cbf1680a696a8&hash=ed3d739c4ca06834c2f9ffb1a274b79a")
         .then(response => response.json())
         .then(data => {
             marvelData = data;
@@ -21,21 +21,23 @@ const llamadaApi = ()=>{
         })
 }
 
-//llamadaApi() //onload 
 
 //dibuja en la pantalla la informacion del array de peliculas
 let nombre;
 let descripcion;
 let image;
+let comics;
+let position;
 const getMovieData= ()=>{
     for(i=0;i < filteredData.length; i++){
         nombre = filteredData[i].name;
         descripcion = filteredData[i].modified;
         image = `${filteredData[i].thumbnail.path}.${filteredData[i].thumbnail.extension}` ;
-        renderMovies()
-    }
+        if(!image.includes("image_not_available")){ //renderiza solo personajes que la imagen este disponible
+            renderMovies()
+        } 
+    }   
 }
-
 
 //renderiza peliculas filtradas
 const getMovieFiltered = () =>{
@@ -43,8 +45,9 @@ const getMovieFiltered = () =>{
         nombre = contactsFiltered[j].name;
         descripcion = contactsFiltered[j].modified;
         image = `${contactsFiltered[j].thumbnail.path}.${contactsFiltered[j].thumbnail.extension}`;
-        renderMovies();
-        console.log(nombre);  
+        if(!image.includes("image_not_available")){
+            renderMovies();
+        }  
     }
 }
 
@@ -52,32 +55,37 @@ const getMovieFiltered = () =>{
 //crea los elementos clases y atributos html
 const renderMovies = () =>{
     const divContenido = document.createElement("div");
-    const divPortada = document.createElement("div");
+    const cardBody = document.createElement("div");
     const imagen = document.createElement("img");
-    const tituloPelicula = document.createElement("div");
     const titulo = document.createElement("p");
-    const descripcionPelicula =document.createElement("div");
     const descripcionP = document.createElement("p");
 
-    divContenido.classList.add("col-sm-4");
-    divContenido.classList.add("col-md-2");
+    divContenido.classList.add("col-sm-6");
+    divContenido.classList.add("col-md-4");
+    divContenido.classList.add("col-lg-3");
+    divContenido.classList.add("card");
     divContenido.classList.add("contenido-pelicula");
-    divPortada.classList.add("portada");
+    imagen.classList.add("card-img-top");
     imagen.classList.add("imagen-pelicula");
-    tituloPelicula.classList.add("titulo-pelicula");
-    descripcionPelicula.classList.add("descripcion-pelicula");
+    cardBody.classList.add("card-body");
+    cardBody.classList.add("card-body-text");
+    titulo.classList.add("card-text");
+    titulo.classList.add("titulo");
+    descripcionP.classList.add("card-text");
+    descripcionP.classList.add("descripcion");
+    
 
     imagen.setAttribute("src", image);
     titulo.innerHTML = `${nombre}`;
     descripcionP.innerHTML= `Modificado: ${descripcion}`;
 
     contenedorPrincipal.appendChild(divContenido);
-    divContenido.appendChild(divPortada);
-    divPortada.appendChild(imagen);
-    divContenido.appendChild(tituloPelicula);
-    tituloPelicula.appendChild(titulo);
-    divContenido.appendChild(descripcionPelicula);
-    descripcionPelicula.appendChild(descripcionP);
+    divContenido.appendChild(imagen);
+    divContenido.appendChild(cardBody);
+    cardBody.appendChild(titulo);
+    cardBody.appendChild(descripcionP);
+
+  
 }
 
 

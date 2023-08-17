@@ -45,57 +45,35 @@ body{
     background-color: #2A2A2A;
     border-radius: 10px;
 }
-.contenido-pelicula{
+.contenedor-principal{
+    justify-content:center;
+    gap: 10px;
+}
+.contenido-pelicula{ 
     border: 1px solid rgb(49, 48, 48);
-    height: 40svh;
     padding-top: 3px;
+    background-color: transparent;
+    color: white;
+    max-width: 250px;
+}
+.contenido-pelicula img{
+    height: 100%;
 }
 .contenido-pelicula:hover{
-    .portada{
-        height: 85%;
-    }
-    .titulo-pelicula{
-        height: 10%;
-    }
-    .titulo-pelicula p{
-        -webkit-line-clamp: 2;
-    }
-    .descripcion-pelicula{
-        display: none;
-    }
+  
 }
-.portada{
-    height: 80%;
-    text-align: center; 
-}
-.imagen-pelicula{
-    height: 100%;
-    width: 100%;
-}
-.titulo-pelicula{
-    font-size: 12px;
-    height: 5%;
-    margin-bottom: 8px;
-}
-.titulo-pelicula p{
-    margin: 0;
+.card-body-text .titulo{
+    text-align:center;
+    font-weight: bold;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.descripcion-pelicula{
-    font-size: 10px;
-    height: 15%;
-}
-.descripcion-pelicula p{
-    margin: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.card-body-text .descripcion{
+    font-size: 0.9rem;
+    text-align:center;
 }
 .footr{
     position: sticky;
